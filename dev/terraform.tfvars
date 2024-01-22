@@ -1,0 +1,17 @@
+cidr_block         = "172.20.0.0/16"
+environment        = "dev"
+cidr-subnet-a      = "172.20.1.0/28"
+cidr-subnet-b      = "172.20.2.0/28"
+cidr-subnet-c      = "172.20.4.0/28"
+domain             = "vpc"
+image              = "ami-0c7217cdde317cfec"
+instance_type_template = "t2.micro"
+ami                = "ami-0c7217cdde317cfec"
+instance_type      = "t2.micro" 
+desired_capacity   = 2
+min_size           = 1 
+max_size           = 2 
+name               = "ec2-load-balancer"
+elb_type           = "application"
+target_type        = "instance"
+domain-name        = "zenitugo.com.ng"

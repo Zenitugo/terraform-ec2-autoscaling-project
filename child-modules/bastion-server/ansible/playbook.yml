@@ -1,0 +1,32 @@
+---
+- name: Deploy Nginx web server on EC2 instance
+  hosts: all
+  become: true
+
+  tasks:
+  # Update apt
+    - name: Update apt package cache (for Ubuntu)
+      apt:
+        update_cache: yes
+      when: ansible_os_family == 'ubuntu'
+
+  # first is to install nginx
+    - name: Install Nginx
+      ansible.builtin.apt: 
+        name: nginx
+        state: present
+
+  # Copy index.html page to default nginx location
+    - name: copy static content to default nginx location
+      ansible.builtin.copy:
+        src: /home/ubuntu/html/index.html.j2
+        dest: /var/www/html/index.html
+        mode: 0644
+        remote_src: yes
+  
+  # Restart Nginx
+    - name: Restart Nginx
+      ansible.builtin.service:
+        name: nginx
+        state: restarted
+   

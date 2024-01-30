@@ -4,7 +4,7 @@ resource "aws_lb" "ec2-lb" {
     name               = var.name
     internal           = false
     load_balancer_type = var.elb_type
-    subnets            = [var.private-subnet-a, var.private-subnet-b]
+    subnets            = [var.public-subnet-a, var.public-subnet-b]
     security_groups    = [aws_security_group.alb-sg.id]
     
 

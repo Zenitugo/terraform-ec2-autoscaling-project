@@ -14,3 +14,6 @@
 - Your Instances should not be assigned public IP addresses.
 - set up auto scaling
 - You must submit a custom domain name(from a domain provider e.g. Route53) or the ALB’s domain name.
+
+
+**TO SEE A BREAKDOWN OF THE PROJECT SOLUTION** [CLICK HERE](https://github.com/Zenitugo/terraform-ec2-autoscaling-project/blob/master/Documentation.md)

@@ -2,7 +2,8 @@ variable "cidr_block" {}
 variable "environment"{}        
 variable "cidr-subnet-a" {}      
 variable "cidr-subnet-b" {}      
-variable "cidr-subnet-c" {}      
+variable "cidr-subnet-c" {} 
+variable "cidr-subnet-d" {}     
 variable "domain" {}             
 variable "image" {}
 variable "instance_type_template" {}

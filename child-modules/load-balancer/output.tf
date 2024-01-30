@@ -1,4 +1,3 @@
-
 # Output the value of the application load balancer
 output "alb" {
     value = aws_lb.ec2-lb.arn

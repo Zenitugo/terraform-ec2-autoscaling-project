@@ -1,5 +1,5 @@
 
-# Create autoscaling group for ec2 private servers
+# Create an autoscaling group for ec2 private servers
 
 resource "aws_autoscaling_group" "ec2-autoscale" {
     name = "ec2-autoscale"

@@ -61,6 +61,7 @@ resource "null_resource" "ansible-files" {
       host     = aws_instance.bastion.private_ip
       bastion_host = aws_instance.bastion.public_ip
     }
+
   }
 
 
@@ -109,9 +110,9 @@ resource "null_resource" "ansible-files" {
     bastion_ip = aws_instance.bastion.private_ip
   }
 
-  depends_on = [aws_instance.bastion, 
-    var.scaling]
     
+  depends_on = [aws_instance.bastion, 
+    var.scaling] 
 }
 
 

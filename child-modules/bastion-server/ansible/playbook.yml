@@ -16,6 +16,12 @@
         name: nginx
         state: present
 
+    # Start Nginx
+    - name: Start Nginx
+      ansible.builtin.service:
+        name: nginx
+        state: started
+
   # Copy index.html page to default nginx location
     - name: copy static content to default nginx location
       ansible.builtin.copy:

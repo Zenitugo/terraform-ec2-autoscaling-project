@@ -34,3 +34,16 @@ output "availability-zone-a" {
 output "availability-zone-b" {
     value = data.aws_availability_zones.azs.names[1]
 }
+
+
+########################################################################################################
+#########################################################################################################
+
+# Output the oublic subnets
+output "public-subnet-a" {
+    value = aws_subnet.public-subnet-a.id
+}
+
+output "public-subnet-b" {
+    value = aws_subnet.public-subnet-b.id
+}

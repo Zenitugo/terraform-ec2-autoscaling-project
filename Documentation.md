@@ -2,8 +2,6 @@
 This project focuses on using terraform to provision two privatew servers within an autoscaling group using an ec2 launch template and accessing the content of each servers through a load balancer dns name or domain name attached to the load balancer.
 
 # DEEP DIVE INTO THE PROJECT
-[happy](https://giphy.com/clips/theoffice-dvDiC9t2Ed2z5hYkgb.gif)
-
 The project is in two fold:
 1. Using terraform to create infrastructure in aws account.
 2. Using Ansible to configure each server.

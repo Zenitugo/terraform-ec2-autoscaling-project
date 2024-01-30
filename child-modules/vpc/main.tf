@@ -63,6 +63,18 @@ resource "aws_subnet" "public-subnet-a" {
     }
 }
 
+resource "aws_subnet" "public-subnet-b" {
+    vpc_id = aws_vpc.ec2-vpc.id
+    cidr_block = var.cidr-subnet-d
+    availability_zone = data.aws_availability_zones.azs.names[1]
+    map_public_ip_on_launch = true
+
+    tags = {
+        Name = "public-subnet-b"
+    }
+}
+
+
 
 ###########################################################################################################################################
 ###########################################################################################################################################
@@ -76,6 +88,7 @@ resource "aws_eip" "elastic-ip" {
 
 resource "aws_nat_gateway" "ec2-nat-gateway" {
     allocation_id = aws_eip.elastic-ip.allocation_id
+    connectivity_type = "public"
     subnet_id = aws_subnet.public-subnet-a.id
 }
 
@@ -108,6 +121,12 @@ resource "aws_route_table" "private-rt" {
 # Associate public subnets to the route tables
 resource "aws_route_table_association" "public-rt" {
     subnet_id = aws_subnet.public-subnet-a.id
+    route_table_id = aws_route_table.public-rt.id
+
+}
+
+resource "aws_route_table_association" "public-rt-b" {
+    subnet_id = aws_subnet.public-subnet-b.id
     route_table_id = aws_route_table.public-rt.id
 
 }

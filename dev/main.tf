@@ -4,7 +4,8 @@ module "vpc" {
     environment                                         = var.environment
     cidr-subnet-a                                       = var.cidr-subnet-a
     cidr-subnet-b                                       = var.cidr-subnet-b 
-    cidr-subnet-c                                       = var.cidr-subnet-c 
+    cidr-subnet-c                                       = var.cidr-subnet-c
+    cidr-subnet-d                                       = var.cidr-subnet-d 
     domain                                              = var.domain
 }
 
@@ -46,8 +47,8 @@ module "load-balancer" {
     source                                             = "../child-modules/load-balancer"
     name                                               = var.name
     elb_type                                           = var.elb_type
-    private-subnet-a                                   = module.vpc.private-subnet-a
-    private-subnet-b                                   = module.vpc.private-subnet-b
+    public-subnet-a                                    = module.vpc.public-subnet-a
+    public-subnet-b                                    = module.vpc.public-subnet-b
     environment                                        = var.environment
     target_type                                        = var.target_type
     vpc_id                                             = module.vpc.vpc_id

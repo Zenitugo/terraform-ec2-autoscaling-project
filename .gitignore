@@ -1,0 +1,9 @@
+# Ignore the files created by terraform
+.terraform.lock.hcl
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+
+# Ignore my private keys
+child-modules/bastion-server/key-folder/
+
